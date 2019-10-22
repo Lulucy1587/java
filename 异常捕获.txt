@@ -1,0 +1,51 @@
+public class Try_Catch_Exp2 .1{
+	public static void main(String[] args) {
+	
+		int a=5,b=0,c[]= {1,2,3,4,5};
+		try {
+			System.out.println("Before throw");
+			if(b==0) 
+				throw (new ArithmeticException());
+				System.out.println(a/b);
+		}
+		catch(ArithmeticException e) {
+			System.out.println("处理数组算数异常的catch语块捕获了异常！");
+			System.out.println("捕获的异常为"+e);
+		}
+		catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("处理数组下标越界异常的catch语句块捕获了异常！");
+			System.out.println("捕获的异常为"+e);
+		}
+		finally {
+			System.out.println("这是所有catch语句块的共有部分！");
+			System.out.println("try-catch-finally块后面的语句");
+		}
+	}
+}
+---------------------------------------------------------------------------------------------------------
+public class Try_Catch_Exp2.2 {
+	public static void main(String[] args) {
+	
+		int a=5,b=0,c[]= {1,2,3,4,5};
+                                  try {
+			if(c[5]==5)
+				throw (new ArrayIndexOutOfBoundsException());
+			System.out.println("After throw");
+		}
+		catch(ArithmeticException e) {
+			System.out.println("处理数组算数异常的catch语块捕获了异常！");
+			System.out.println("捕获的异常为"+e);
+		}
+		catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("处理数组下标越界异常的catch语句块捕获了异常！");
+			System.out.println("捕获的异常为"+e);
+		}
+		finally {
+			System.out.println("这是所有catch语句块的共有部分！");
+			System.out.println("try-catch-finally块后面的语句");
+		}
+               ｝
+｝
+
+
+
