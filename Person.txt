@@ -1,0 +1,32 @@
+
+import java.util.Scanner;
+
+public class Person {
+	private static Scanner in;
+
+	public static void main(String[] args) {
+		in = new Scanner(System.in);
+		String zhangsan_sex = in.nextLine();
+		int zhangsan_age = in.nextInt();
+		
+	    
+		switch(zhangsan_sex) {
+		case "man":System.out.println("man"+" "+zhangsan_age);break;
+		case "female":System.out.println("female"+" "+zhangsan_age);break;
+		default:{System.out.println("性别输入错误，请重新输入");break;}
+		}
+		if(zhangsan_age>120||zhangsan_age<0)
+			System.out.println("年龄输入错误，请重新输入");
+		in = new Scanner(System.in);
+		String lisi_sex = in.nextLine();
+		int lisi_age = in.nextInt();
+		switch(lisi_sex) {
+		case "man":System.out.println("man"+" "+lisi_age);break;
+		case "female":System.out.println("female"+" "+lisi_age);break;
+		default:{System.out.println("性别输入错误，请重新输入");break;}
+		}
+		if(lisi_age>120||zhangsan_age<0)
+			System.out.println("年龄输入错误，请重新输入");	
+
+    }
+}
