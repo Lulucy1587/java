@@ -1,0 +1,75 @@
+public class TestSystemException {
+
+	public static void main(String[] args) {
+		int num[]=new int[2];
+		for(int i=1;i<3;i++) {
+			num[i]=i;
+			System.out.println("num["+i+"]");
+		}	
+    }
+}
+num[1]
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 2
+	at TestSystemException.main(TestSystemException.java:7)
+%这是异常
+-----------------------------------------------------------------------------------------------
+
+public class Throws_Exp {
+
+	public static void main(String[] args) throws ArithmeticException,ArrayIndexOutOfBoundsException{
+		int a=4,b=0,c[]= {1,2,3,4,5};
+		System.out.println(a/b);
+		System.out.println(c[a+1]);
+		System.out.println("end");
+	}
+}
+%这是throws语句
+
+public class Throw_Exp1 {
+
+	public static void main(String[] args){
+	     ArithmeticException e=new ArithmeticException();
+	     int a=4,b=0;
+	     System.out.println("Before ArithmeticException");
+	     if(b==0) throw e;
+	     System.out.println(a/b);
+	}
+
+}
+%这是throw语句
+%throws语句通常在方法头就要写出抛出的异常
+    throw语句是在方法体内抛出异常
+-----------------------------------------------------------------------------------------------------
+public class Try_Catch_Exp1 {
+
+	public static void main(String[] args){
+		int d=0,a;
+		try {
+			System.out.println("Before throw Exception");
+			a=5/d;
+			System.out.println("the Exception is throw,the statement isn't run");
+		}
+		catch(ArithmeticException e) {
+			System.out.println("处理数组算数异常的catch语句捕获了异常！");
+			System.out.println("捕获的异常为"+e);
+		}
+		catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("处理数组下标越界异常的catch语句块捕获了异常！");
+			System.out.println("捕获的异常为"+e);
+		}
+		finally {
+			System.out.println("这是所有catch语块的共有部分！");
+			System.out.println("try-catch-finally块后面的语句！");
+		}
+	}
+
+}
+
+处理数组算数异常的catch语句捕获了异常！
+捕获的异常为java.lang.ArithmeticException: / by zero
+这是所有catch语块的共有部分！
+try-catch-finally块后面的语句！
+
+
+
+
