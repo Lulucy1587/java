@@ -1,11 +1,11 @@
 package SimpleFactory;
 
 public class Factory {
-	public Fruit CreateFruit(String fruitname) {
-		if(fruitname.equals("A"))
-			return new Apple();
-		if(fruitname.equals("B"))
-			return new Banana();
+	public Fruit CreateFruit() {
+//		if(fruitname.equals("A"))
+//			return new Apple();
+//		if(fruitname.equals("B"))
+//			return new Banana();
 		return null;
 	}
 }
