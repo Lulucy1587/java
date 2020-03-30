@@ -1,9 +1,7 @@
-package AbstractFactory;
 
-public abstract class Fruit {
+
+public class Fruit {
 
 	public void eat() {
-		
 	}
-
 }
