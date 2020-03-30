@@ -1,6 +1,6 @@
 package AbstractFactory;
 
-public abstract class Fruit {
+public abstract class Vegetables {
 
 	public void eat() {
 		

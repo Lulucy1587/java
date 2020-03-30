@@ -1,12 +1,10 @@
-package SimpleFactory;
+package AbstractFactory;
 
 public class Client {
 	public static void main(String[] args) {
-//		Factory fac=new BFactory();
-//		Fruit fru=fac.CreateFruit();
-		//Fruit fru=fac.CreateFruit("B");
-		Factory fac=(Factory)XMLUtil.getBean();
-		Fruit fru=fac.CreateFruit();
-		fru.eat();
+		AConF acf=new AConF();
+		AConV acv=new AConV();
+		acf.CreateF().eat();
+		acv.CreateV().eat();
 	}
 }
