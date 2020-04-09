@@ -1,7 +1,9 @@
+package Copy;
 
+public class Apple extends MyFruit {
 
-public class Apple extends Fruit{
-	public void eat() {
-		System.out.println("eat Apple");
+	public Apple() {
+		kind="Apple";
 	}
+
 }
