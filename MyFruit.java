@@ -1,4 +1,4 @@
-package Copy;
+package Single;
 
 public class MyFruit implements Cloneable {
 	protected String kind;

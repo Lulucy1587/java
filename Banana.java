@@ -1,4 +1,4 @@
-package Copy;
+package Single;
 
 public class Banana extends MyFruit {
 
