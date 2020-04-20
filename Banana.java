@@ -1,4 +1,4 @@
-package Single;
+package Ado;
 
 public class Banana extends MyFruit {
 

@@ -1,19 +1,13 @@
-package Single;
+package Ado;
 
-public class MyFruit implements Cloneable {
+public class MyFruit{
 	protected String kind;
+	MyFruit fruit;
 	
-	public void display() {
-		System.out.println(kind);
+	public void Set(MyFruit fruit) {
+		this.fruit=fruit;
 	}
-	public Object clone() {
-		Object obj=null;
-		try {
-			obj=super.clone();
-		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return obj;
+	public String Get() {
+		return fruit.kind;
 	}
 }
