@@ -1,9 +1,9 @@
-package Ado;
+package Com;
 
-public class Apple extends MyFruit {
+public class Apple extends MyElement{
 
-	public Apple() {
-		kind="Apple";
+	public void eat() {
+		System.out.println("³ÔÆ»¹û");
 	}
 
 }
