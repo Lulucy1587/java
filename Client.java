@@ -1,29 +1,26 @@
-package command;
+package chain;
+
+import java.util.Random;
 
 public class Client {
 
 	public static void main(String[] args) {
-		Order order1=new Order();
-		order1.setId(1);
-		order1.setFruitmap("³È×Ó", 1);
-		order1.setFruitmap("Àæ×Ó", 2);
-		order1.setFruitmap("Æ»¹û", 3);
+		AbstractFruitSort Bfs,Mfs,Sfs;
+		Bfs=new BigFruitSorting(9);
+		Mfs=new MidFruitSorting(5);
+		Sfs=new SmallFruitSorting(2);
 		
-		Order order2=new Order();
-		order2.setId(2);
-		order2.setFruitmap("Ïã½¶", 4);
-		order2.setFruitmap("ÆÏÌÑ", 5);
-		order2.setFruitmap("Î÷ºìÊÁ", 6);
+		Bfs.setNextSort(Mfs);
+		Mfs.setNextSort(Sfs);
 		
-		Operater op=new Operater();
-		OrderCommand cmd1=new OrderCommand(op,order1);
-		OrderCommand cmd2=new OrderCommand(op,order2);
-		
-		WaitorInvoker waitor=new WaitorInvoker();
-		waitor.SetCommand(cmd1);
-		waitor.SetCommand(cmd2);
-		
-		waitor.orderUp();
-		
+		Random rm=new Random();
+		for(int i=0;i<1000;i++)
+		{
+			int weight=rm.nextInt(10);
+			Bfs.sendFruit(weight, "³È×Ó");
+		}
+		Bfs.getFruitBox();
+		Mfs.getFruitBox();
+		Sfs.getFruitBox();
 	}
 }
