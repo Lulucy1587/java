@@ -1,4 +1,4 @@
-package Pro;
+package DPro;
 
 public class CRemoPic implements IShowPic {
 //Ô¶³ÌÍ¼Æ¬µ÷ÓÃ
