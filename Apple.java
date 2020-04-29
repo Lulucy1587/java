@@ -1,9 +1,9 @@
-package Vis;
+package Copy;
 
-public class Apple implements IProduct {
+public class Apple extends MyFruit {
 
-	public void accept(AVisitor visitor) {
-		visitor.visit(this);
+	public Apple() {
+		kind="Apple";
 	}
 
 }

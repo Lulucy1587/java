@@ -1,4 +1,4 @@
-package Ado;
+package Copy;
 
 public class Banana extends MyFruit {
 
