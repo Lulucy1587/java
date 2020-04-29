@@ -1,35 +1,22 @@
-package Mem;
+package Int;
 
 public class Client {
 	public static void main(String[] args) {
-		OriginatorChess chess=new OriginatorChess(new MementoChess("ºÚ",2,2));
-		play(chess);
-		chess.SetX(3);
-		play(chess);
-		chess.SetY(6);
-		play(chess);
-		undo(chess,index);
-		undo(chess,index);
-		redo(chess,index);
-		redo(chess,index);
+		Expression isMale=getMaleExpression();
+		Expression isMarriedWoman=getMarriedWomanExpression();
+		System.out.println("John is male?"+isMale.interpret("Male John"));
+		System.out.println("Julie is a married women?"+isMarriedWoman.interpret("Married Julie"));
 	}
-	private static int index=0;
-	private static CaretakerChess caretaker=new CaretakerChess();
-	public static void play(OriginatorChess chess) {
-		index++;
-		caretaker.AddMem(chess.SavetoMemento());
-		chess.Show();
+	public static Expression getMaleExpression() {
+		Expression robert=new TerminalExpression("Robert");
+		Expression john=new TerminalExpression("John");
+		return new OrExpression(robert,john);
 	}
-	public static void undo(OriginatorChess chess,int i) {
-		System.out.println("********»ÚÆå***********");
-		index--;
-		chess.Restore(caretaker.getMem(index-1));
-		chess.Show();
+	public static Expression getMarriedWomanExpression() {
+		Expression julie=new TerminalExpression("Julie");
+		Expression married=new TerminalExpression("Married");
+		return new AndExpression(julie,married);
 	}
-	public static void redo(OriginatorChess chess,int i) {
-		System.out.println("*******³·Ïú»ÚÆå*********");
-		chess.Restore(caretaker.getMem(index));
-		index++;
-		chess.Show();
-	} 
+	
+	
 }
