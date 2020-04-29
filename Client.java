@@ -1,12 +1,21 @@
-package Obv;
+package Vis;
+
 
 public class Client {
+
 	public static void main(String[] args) {
-		SubjectS subject=new ConcreteSubjectB();
-		ObserverO obs1=new ConcreteObserver1();
-		ObserverO obs2=new ConcreteObserver2();
-		subject.Add(obs1);
-		subject.Add(obs2);
-		subject.notifyObserver();
+		IProduct b1=new Book();
+		IProduct b2=new Book();
+		IProduct a1=new Apple();
+		AVisitor visitor;
+		
+		BuyBasket basket=new BuyBasket();
+		basket.addProduct(b1);
+		basket.addProduct(b2);
+		basket.addProduct(a1);
+		
+		visitor=(AVisitor)XMLUtilProduct.getBean();
+		visitor.setName("уехЩ");
+		basket.accept(visitor);
 	}
 }
