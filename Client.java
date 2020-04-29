@@ -1,21 +1,11 @@
-package Vis;
-
+package Tem;
 
 public class Client {
-
 	public static void main(String[] args) {
-		IProduct b1=new Book();
-		IProduct b2=new Book();
-		IProduct a1=new Apple();
-		AVisitor visitor;
-		
-		BuyBasket basket=new BuyBasket();
-		basket.addProduct(b1);
-		basket.addProduct(b2);
-		basket.addProduct(a1);
-		
-		visitor=(AVisitor)XMLUtilProduct.getBean();
-		visitor.setName("уехЩ");
-		basket.accept(visitor);
+		ADefiniteIntegral[] x=new ADefiniteIntegral[2];
+		x[0]=new DefIntegalXX(0,20,100);
+		x[1]=new DefIntegralLn(2.71,20,100);
+		for(int i=0;i<2;i++)
+			System.out.println(x[i].CalDefiniteIntegral());
 	}
 }
